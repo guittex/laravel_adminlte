@@ -7,5 +7,5 @@ O projeto é um sistema com um CRUD de produtos feito com laravel usando tema Ad
 - Editar produtos.
 - Remover Produtos.
 
-## License
+## Licença
 [MIT license](https://opensource.org/licenses/MIT).
