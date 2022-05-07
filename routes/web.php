@@ -16,6 +16,7 @@ Route::controller(ProdutoController::class)->group(function () {
     Route::get('/produtos/view/{id}', 'view');
     Route::match(['get', 'post'], '/produtos/edit/{id}', 'edit')->name("produto.edit");
     Route::match(['get', 'post'], 'produtos/add', 'add')->name("produto.add");
+    Route::post('/produtos/delete/{id}', 'delete');
 });
 
 Auth::routes();

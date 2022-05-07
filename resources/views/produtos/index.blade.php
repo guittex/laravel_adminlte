@@ -57,8 +57,11 @@
                                         <td>{{ $produto->category }}</td>
                                         <td>{{ $produto->description }}</td>
                                         <td>
-                                            <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-warning-dark text-white btn-xs">Editar</a>
-                                            <button class="btn btn-danger btn-xs">Deletar</button>
+                                            <a style="width:46px;margin-bottom:5px" href="/produtos/edit/{{ $produto->id }}" class="btn btn-warning-dark text-white btn-xs">Editar</a>
+                                            <form action="/produtos/delete/{{ $produto->id }}" method="post">
+                                                @csrf
+                                                <button class="btn btn-danger btn-xs" type="submit">Deletar</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

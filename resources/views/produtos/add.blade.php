@@ -11,7 +11,17 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5>Adicionar Produtos</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Adicionar Produtos</h5>
+                    </div>
+                    <div class="col-md-6 float-r">
+                        <a href="/produtos">
+                            <i class="fa fa-angle-double-left"></i>
+                            <span style="margin-left: 10px">VOLTAR</span>
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 {{ Form::open(['route' => 'produto.add', 'method' => 'post']) }}

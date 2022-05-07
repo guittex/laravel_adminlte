@@ -88,4 +88,20 @@ class ProdutoController extends Controller
             'produto' => $produto,
         ]);
     }
+
+    /**
+     * Método que apaga um registro
+     *
+     * @param Request $request
+     * @param Produto|int $id
+     * @return void
+     */
+    public function delete(int $id, Request $request)
+    {
+        $produto = Produto::findOrFail($id);
+
+        $produto->delete();
+
+        return redirect('/produtos')->with('msg', 'Produto deletado com sucesso');
+    }
 }
