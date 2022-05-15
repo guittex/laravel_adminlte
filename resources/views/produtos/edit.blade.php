@@ -33,6 +33,10 @@
                             {!! Form::number('qtd', $produto->qtd ?? '', ['class' => 'form-control', 'placeholder' => 'Digite...']) !!}
                         </div>
                         <div class="col-md-12 m-t-10">
+                            {!! Form::label('File') !!}
+                            {!! Form::file('file', ['class' => 'form-control']); !!}
+                        </div>
+                        <div class="col-md-12 m-t-10">
                             {!! Form::label('Descrição') !!}
                             {!! Form::textarea('description', $produto->description ?? '', ['class' => 'form-control', 'placeholder' => 'Digite...']) !!}
                         </div>

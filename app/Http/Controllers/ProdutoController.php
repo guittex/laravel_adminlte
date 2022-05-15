@@ -7,6 +7,11 @@ use App\Models\Produto;
 
 class ProdutoController extends Controller
 {   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Método que visualiza a listagem dos produtos
      *
@@ -42,15 +47,26 @@ class ProdutoController extends Controller
      */
     public function add(Request $request)
     {
-
         if($request->method() == 'POST'){
             $produto = new Produto;
+
+            if($request->hasFile('file')){
+                $file = $request->file;
+
+                $extension = $file->extension();
+
+                $fileName = md5($file->getClientOriginalName()) . strtotime('now') .  '.' . $extension;
+
+                $file->move(public_path('img/products'), $fileName);
+
+                $produto->file = $fileName;
+            }
             
             $produto->name        = $request->name;
             $produto->qtd         = $request->qtd;
             $produto->category    = $request->category;
             $produto->description = $request->description;
-
+            
             $produto->save();
 
             return redirect('/produtos')->with('msg', 'Produto adicionado com sucesso');

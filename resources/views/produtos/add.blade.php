@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="card-body">
-                {{ Form::open(['route' => 'produto.add', 'method' => 'post']) }}
+                {{ Form::open(['route' => 'produto.add', 'method' => 'post', 'enctype' => 'multipart/form-data']) }}
                     <div class="row">
                         <div class="col-md-4">
                             {!! Form::label('Nome') !!}
@@ -37,6 +37,20 @@
                         <div class="col-md-4">
                             {!! Form::label('Quantidade') !!}
                             {!! Form::number('qtd', '', ['class' => 'form-control', 'placeholder' => 'Digite...']) !!}
+                        </div>
+                        <div class="col-md-6 m-t-10">
+                            {!! Form::label("Código") !!}
+                            {!! Form::select('json', [
+                                'tipo1' => 'asdsadsad',
+                                'tipo2' => '3242342',
+                                'tipo3' => '44',
+                                'tipo4' => '555'
+
+                                ], '', ['class' => 'form-control', 'multiple' => true]) !!}
+                        </div>
+                        <div class="col-md-6 m-t-10">
+                            {!! Form::label('Arquivo') !!}
+                            {!! Form::file('file', ['class' => 'form-control']); !!}
                         </div>
                         <div class="col-md-12 m-t-10">
                             {!! Form::label('Descrição') !!}

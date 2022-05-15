@@ -52,7 +52,7 @@
                                 @foreach ($produtos as $produto)
                                     <tr>
                                         <th scope="row">{{ $produto->id }}</th>
-                                        <td>{{ $produto->name }}</td>
+                                        <td>{{ $produto->nnpame }}</td>
                                         <td>{{ $produto->qtd }}</td>
                                         <td>{{ $produto->category }}</td>
                                         <td>{{ $produto->description }}</td>
